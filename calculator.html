@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<!-- A calculator app -->
+<html>
+  <head>
+    <title>Calculator</title>
+
+    <script>
+      function calculate(){
+        var numberOne = Number(document.getElementById("number1").value);
+        var operatorElement = document.getElementById("operator").value;
+        var numberTwo = Number(document.getElementById("number2").value);
+        var resultElement = document.getElementById("result");
+
+        var result;
+          if (operatorElement === "+") {
+            result = numberOne + numberTwo;
+          } else if (operatorElement === "-") {
+            result = numberOne - numberTwo;
+          } else if (operatorElement === "*") {
+            result = numberOne * numberTwo;
+          } else if (operatorElement === "/") {
+            result = numberOne / numberTwo;
+          } else {
+            window.alert("Not a valid operator!");
+          }
+        resultElement.value = result;
+      };
+    </script>
+  </head>
+
+  <body>
+
+    <form id="calculator" onSubmit="calculate(); return false;">
+      <fieldset style="width: 400px">
+        <div>
+          <label for="number1">Number 1: </label>
+          <input type="text" id="number1" value="" />
+        </div>
+        <div>
+          <label for="operator">Operator: </label>
+          <input type="text" id="operator" value="" />
+        </div>
+        <div>
+          <label for="number2">Number 2: </label>
+          <input type="text" id="number2" value="" />
+        </div>
+        <div>
+          <label for="Result">Result: </label>
+          <input type="text" id="result" value="" />
+        </div>
+        <div>
+          <input type="submit" />
+        </div>
+      </fieldset>
+    </form>
+  </body>
+</html>
