@@ -1,3 +1,17 @@
+$(function() {
+  loadImage();
+
+  $("#monkey").on("click", function() {
+    guess("monkey");
+    return false;
+  });
+
+  $("#penguin").on("click", function() {
+    guess("penguin");
+    return false;
+  });
+
+});
 
 var images = [
   {kind: "monkey", src: "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcRlaFFuiq4RSfLOiqPCohSLIJh-M-wLCWWWotE_G2A2vGmHY8V4" },
@@ -11,12 +25,9 @@ var images = [
 var correctGuesses = 0
 var currentImage = 0
 
-window.onload = loadImage;
-
 function loadImage() {
-  var imageTag = document.getElementById("guessing-image");
     if (images[currentImage] !== undefined) {
-      imageTag.src = images[currentImage].src;
+      $("#guessing-image").attr("src", images[currentImage].src);
     } else {
       completeGame();
     }
@@ -36,8 +47,7 @@ function updateImage(){
 }
 
 function updateResults(){
-  var resultTag = document.getElementById("correct-guesses");
-  resultTag.innerHTML = correctGuesses;
+  $("#correct-guesses").text(correctGuesses);
 }
 
 function completeGame() {
