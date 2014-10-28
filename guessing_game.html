@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<!-- A calculator app -->
+<html>
+  <head>
+    <title>Guessing Game</title>
+
+    <script src="guess_game.js"></script>
+  </head>
+
+
+  <body>
+    <header>
+      <h1>Guess what kind of animal this is!</h1>
+    </header>
+
+    <div>
+      <img id="guessing-image" class="an-image" >
+    </div>
+
+    <div>
+      <a href="#" id="monkey" onclick="guess('monkey'); return false">Monkey</a>
+      <i> -- or -- </i>
+      <a href="#" id="penguin" onclick="guess('penguin'); return false">Penguin</a>
+    </div>
+
+    <div>
+      <p>Correct Guesses: <span id="correct-guesses"></span></p>
+    </div>
+  </body>
+</html>
